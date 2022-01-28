@@ -12,10 +12,54 @@ const addEventListenerImgFavorite = () => {
         this.src = 'images/favorite-heart-fill.svg';
         //delete this.dataset.acvited; //não funciona no safari
       }
-    })
+    });
   });
 }
 
+const addEventListenerFilterTextArticles = () => {
+  const filterTextArticles = (filtro) => {
+
+    const cleaMark = (txt) => {
+      let regex = new RegExp(`<span style=\'background-color: #efd13d;\'>(.*?)</span>`, 'gi');
+      txt.innerHTML = txt.innerText.replace(regex, '$1')
+    };
+
+    [...document.querySelectorAll('article')].map((article) => {
+
+      let visible = false;
+      [...article.querySelectorAll('.txt')].map((txt) => {
+        let regex = new RegExp(`(${filtro})`, 'gi');
+
+        cleaMark(txt);
+        if (regex.test(txt.innerText)) {
+          txt.innerHTML = txt.innerText.replace(regex, '<span style=\'background-color: #efd13d;\'>$1</span>')
+          visible = true;
+        }
+
+      })
+
+      if (visible) {
+        article.style.display = 'block'
+      } else {
+        article.style.display = 'none'
+      }
+
+    });
+  }
+
+  //--
+
+  const inpSearch = document.querySelector('#inp-search');
+
+  inpSearch.addEventListener('keyup', function (txt) {
+    let filtro = txt.target.value;
+    filterTextArticles(filtro);
+  });
+}
+
+/**
+ * Adição dos eventos
+ */
+
 addEventListenerImgFavorite();
-
-
+addEventListenerFilterTextArticles();

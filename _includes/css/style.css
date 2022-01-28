@@ -1,0 +1,63 @@
+/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Media_Queries/Using_media_queries */
+/* Pesquisar regras de tipografias */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  /* If you set box-sizing: border-box; on an element, padding and border are included in the width and height */
+  box-sizing: border-box; 
+}
+
+html {
+  min-width: 320px;
+  font-size: 16px;
+ }
+
+ h1 {
+  font-size: 1.5rem;
+ }
+
+ p {
+  font-size: 1rem;
+ }
+
+/**
+ * INPUTS
+*/
+
+input {
+  border: none;
+}
+
+textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+/**
+ * MEDIAS QUERYS
+*/
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+   }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 14px;
+   }
+}
+
+/**
+  Quando o celular estar em modo landscape
+  tem que alterar a orientation
+*/
+/* @media only screen and (orientation: landscape) {
+  main {
+    height: 100%;
+  }
+} */

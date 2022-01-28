@@ -17,7 +17,7 @@ const addEventListenerImgFavorite = () => {
 }
 
 const addEventListenerFilterTextArticles = () => {
-  const filterTextArticles = (filtro) => {
+  const filterTextArticles = (filter) => {
 
     const cleaMark = (txt) => {
       let regex = new RegExp(`<span style=\'background-color: #efd13d;\'>(.*?)</span>`, 'gi');
@@ -28,7 +28,7 @@ const addEventListenerFilterTextArticles = () => {
 
       let visible = false;
       [...article.querySelectorAll('.txt')].map((txt) => {
-        let regex = new RegExp(`(${filtro})`, 'gi');
+        let regex = new RegExp(`(${filter})`, 'gi');
 
         cleaMark(txt);
         if (regex.test(txt.innerText)) {
@@ -52,8 +52,8 @@ const addEventListenerFilterTextArticles = () => {
   const inpSearch = document.querySelector('#inp-search');
 
   inpSearch.addEventListener('keyup', function (txt) {
-    let filtro = txt.target.value;
-    filterTextArticles(filtro);
+    let filter = txt.target.value;
+    filterTextArticles(filter);
   });
 }
 

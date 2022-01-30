@@ -1,0 +1,151 @@
+:root {
+  --products-size: 304px;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header p {
+  background-color: #000000;
+  color: #FFFFFF;
+  text-align: center;  
+  padding: 8px 0px;  
+}
+
+header h1 {
+  text-align: center;
+  padding: 8px 0px;
+}
+
+header .painel {
+  position: relative;
+  /* height: 249px; */
+}
+
+header .painel img {
+  width: 100%;
+}
+
+header .painel .capa-img-shawdon {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 98.6%;
+  opacity: 0.6;
+  background-color: #000000;
+}
+
+/**
+ * MAIN
+*/
+main {
+  /* max-width: 1217px; */
+}
+
+main .categoria-title {
+  margin: 32px 0px;
+  text-align: center;
+}
+
+main .categoria-title h1 {
+  font-weight: 600;
+}
+
+main .categoria-title h1, main .categoria-title p {
+  padding: 8px 0px;
+}
+
+main .list-products {
+  display: flex;
+  justify-content: center;
+}
+
+main .list-products ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 4%;  
+  max-width: calc(var(--products-size) * 4);
+  text-align: center;
+}
+
+main .list-products ul li {
+  width: 280px;
+  height: 282px;
+  background-color: #EBE9EA;
+  margin: 12px;
+  
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column;
+  
+  align-items: center;
+  
+  padding: 0px 12px;
+}
+
+main .list-products ul li .icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin: 15px;
+    transition: 0.3s ease;
+    background-color: #000000;
+    background-image: url(../../images/icones/icons8-shopping-cart-64_1-white.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  main .list-products ul li .icon-circle:hover {
+    transform: rotateY(180deg);
+  }
+
+
+/**
+ * FOOTER
+*/
+
+footer {
+  background-color: #000000;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 8px 0px;
+}
+
+/**
+ * MEDIAS QUERYS
+*/
+
+@media (max-width: 1215px) {
+  main .list-products ul {
+    max-width: calc(var(--products-size) * 3);
+  }
+}
+
+@media (max-width: 911px) {
+  main .list-products ul {
+    max-width: calc(var(--products-size) * 2);
+  }
+}
+
+@media (max-width: 607px) {
+  main .list-products ul {
+    max-width: calc(var(--products-size) * 1);
+  }
+}
+
+@media (max-width: 640px) {
+  main .categoria-title {
+    margin: 16px 0px;
+  }
+}
+
+@media (max-width: 320px) {
+  main .categoria-title {
+    margin: 4px 0px;
+  }
+}

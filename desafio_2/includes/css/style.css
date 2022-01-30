@@ -100,9 +100,9 @@ main .list-products ul li .icon-circle {
     background-position: center;
   }
   
-  main .list-products ul li .icon-circle:hover {
+  /* main .list-products ul li .icon-circle:hover {
     transform: rotateY(180deg);
-  }
+  } */
 
 
 /**

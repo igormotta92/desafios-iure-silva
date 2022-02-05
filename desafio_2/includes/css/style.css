@@ -20,7 +20,6 @@ header h1 {
 
 header .painel {
   position: relative;
-  /* height: 249px; */
 }
 
 header .painel img {
@@ -34,6 +33,29 @@ header .painel .capa-img-shawdon {
   height: 98.6%;
   opacity: 0.6;
   background-color: #000000;
+}
+
+header .painel .title {
+  position: absolute;
+  top: 0%;
+  left: 8%;
+  width: 352px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header .painel .title h1, header .painel .title p {
+  text-align: left;
+  background-color: transparent;
+  color: #FFFFFF;
+  padding: 0px;
+}
+
+header .painel .title p {
+  margin-top: 12px;
+  line-height: 1.8em;
 }
 
 /**
@@ -84,6 +106,7 @@ main .list-products ul li {
   align-items: center;
   
   padding: 0px 12px;
+  border-radius: 80px;
 }
 
 main .list-products ul li .icon-circle {
@@ -132,15 +155,26 @@ footer {
   }
 }
 
+@media (max-width: 640px) {
+  main .categoria-title {
+    margin: 16px 0px;
+  }
+}
+
 @media (max-width: 607px) {
   main .list-products ul {
     max-width: calc(var(--products-size) * 1);
   }
 }
 
-@media (max-width: 640px) {
-  main .categoria-title {
-    margin: 16px 0px;
+@media (max-width: 480px) {
+  header .painel .capa-img-shawdon {
+    height: 99.3%;
+  }
+
+  header .painel .title {
+    width: 100%;
+    padding: 0px 24px;
   }
 }
 
@@ -148,4 +182,9 @@ footer {
   main .categoria-title {
     margin: 4px 0px;
   }
+
+  /* header .painel .title {
+    top: 0%;
+    left: 0%;
+  } */
 }

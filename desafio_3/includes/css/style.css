@@ -1,0 +1,176 @@
+:root {
+  --max-width: 1200px;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/**
+ * HEADER
+*/
+
+body > header {
+  background-color: #D7D4FF;
+  height: 560px;
+}
+
+body > header .content {
+  max-width: var(--max-width);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+body > header .content .painel-left, header .content .painel-right {
+  flex-basis: 50%; /* flex: auto; */
+}
+
+body > header .content .painel-left {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 50%;
+}
+
+body > header .content .painel-right {
+  text-align: right;
+}
+
+body > header .content .painel-right img {
+  width: 100%;
+}
+
+/**
+ * MAIN
+*/
+
+main {
+  margin-top: 80px;
+}
+
+main .content {
+  max-width: var(--max-width);
+  margin: auto;
+  display: flex;
+}
+
+/**-----------------------------------------------------------------*/
+
+/* https://coryrylan.com/blog/css-gap-space-with-flexbox */
+
+/* main .content ul {
+  list-style-type: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 150px;
+} */
+
+/**-----------------------------------------------------------------*/
+/**-----------------------------------------------------------------*/
+
+/* main .content ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+main .content ul li:not(:nth-child(3n+1)) {
+  margin-left: 90.01px;
+}
+
+main .content ul li {
+  list-style-type: none;
+  margin-bottom: 90px;
+} */
+
+/**-----------------------------------------------------------------*/
+/**-----------------------------------------------------------------*/
+
+main .content ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  margin-top: -80px;
+  margin-left: -150px;
+}
+
+main .content ul li {
+  margin-top: 80px;
+  margin-left: 150px;
+}
+
+/**-----------------------------------------------------------------*/
+
+main .content ul li article {
+  width: 300px;
+  height: 423px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid black;
+}
+
+main .content ul li article header {
+  flex-basis: 50%;
+}
+
+main .content ul li article div {
+  flex-basis: 50%;
+}
+
+/**
+ * MEDIAS QUERYS
+*/
+
+  @media (max-width: 1200px) {
+
+    body > header .content {
+      padding: 0px 35px;
+    }
+
+    main .content {
+      width: 750px;
+    }
+  }
+
+  @media (max-width: 750px) {
+
+    body > header .content {
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 50px 10px;
+    }
+
+    body > header .content .painel-left, header .content .painel-right {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+    }
+
+    body > header .content .painel-right img {
+      max-width: 380px;
+    }
+
+    main .content {
+      width: 300px;
+    }
+
+    main .content ul, main .content ul li {
+      margin-left: 0px;
+    }
+  }
+
+  .btn {
+    height: 100%;
+    max-width: 180px;
+    max-height: 40px;
+    border-radius: 5px;
+
+    background-color: #6C63FF;
+    color: #FFFFFF;
+  }
